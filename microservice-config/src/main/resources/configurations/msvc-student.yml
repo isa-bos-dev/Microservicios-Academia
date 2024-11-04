@@ -1,0 +1,26 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: msvc-student
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/studentDb
+    username: root
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQLDialect
+
+eureka:
+  instance:
+    hostname: localhost
+    lease-renewal-interval-in-seconds: 5 # Intervalo de renovación
+    lease-expiration-duration-in-seconds: 10 # Duración antes de expirar
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
